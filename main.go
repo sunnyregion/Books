@@ -67,7 +67,7 @@ func walkDir(dirPth, suffix string) (files []books, content string, err error) {
 				content += "    * "
 			}
 			//[静态资源](/静态资源/README.md)
-			content += fmt.Sprintf("[%s %s](./%s)", strings.Replace(strings.Split(input.name, ".")[0], "_", " ", -1), input.size, input.path) + "\r\n"
+			content += fmt.Sprintf("[%s [%s]](./%s)", strings.Replace(strings.Split(input.name, ".")[0], "_", " ", -1), input.size, input.path) + "\r\n"
 			files = append(files, input)
 		}
 		return nil
