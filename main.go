@@ -44,7 +44,7 @@ func walkDir(dirPth, suffix string) (files []books, content string, err error) {
 		if fi.IsDir() {
 			switch len(strings.Split(filename, "\\")) {
 			case 1:
-				content += "## "
+				content += "### "
 			case 2:
 				content += "* "
 			case 3:
@@ -115,8 +115,7 @@ func main() {
 		}
 		content += c
 	}
-	content += "\r\n" + fmt.Sprintln("共", count, "本书，计", fileSize(sum))
-	content += "\r\n最后更新时间：" + time.Now().Format("2006年1月2日 15:04:05") + "\r\n"
+	content += "\r\n" + fmt.Sprint("共 ", count, " 本书，计 ", fileSize(sum)) + "，最后更新时间：" + time.Now().Format("2006年1月2日 15:04:05") + "\r\n"
 	content += `
 ## 鸣谢
 
